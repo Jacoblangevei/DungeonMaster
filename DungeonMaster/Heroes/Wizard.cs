@@ -18,12 +18,12 @@ namespace DungeonMaster.Heroes
 
         public Wizard(string name) : base(name)
         {
-            LevelAttributes = new HeroAttribute(5, 5, 10); // Initial attributes for Wizard
+            LevelAttributes = new HeroAttribute(1, 1, 8); // Initial attributes for Wizard
         }
         public override void LevelUp()
         {
             Level += 1;
-            LevelAttributes += new HeroAttribute(1, 1, 2); // Increase attributes for each level up
+            LevelAttributes += new HeroAttribute(1, 1, 5); // Increase attributes for each level up
         }
 
         public override string Display()

@@ -25,7 +25,7 @@ namespace DungeonMaster.Heroes
     public abstract class Hero
     {
         public string Name { get; private set; }
-        public int Level { get; private set; }
+        public int Level { get; set; }
         protected HeroAttribute LevelAttributes { get; set; }
         public Dictionary<Slot, Item> Equipment { get; private set; }
         protected abstract List<WeaponType> ValidWeaponTypes { get; }
