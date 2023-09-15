@@ -5,12 +5,11 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonMaster.Equipment;
+using System.Collections.Generic;
 
 namespace DungeonMaster.Heroes
 {
-    using DungeonMaster.Equipment;
-    using System.Collections.Generic;
-
     public class Wizard : Hero
     {
         protected override List<WeaponType> ValidWeaponTypes => new List<WeaponType> { WeaponType.Staff, WeaponType.Wand };
@@ -28,7 +27,6 @@ namespace DungeonMaster.Heroes
 
         public override string Display()
         {
-            // Work in progress
             return "";
         }
     }

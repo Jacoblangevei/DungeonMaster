@@ -32,7 +32,6 @@ namespace DungeonMaster.Heroes
         }
         public override string Display()
         {
-            // Work in progress
             return "";
         }
     }

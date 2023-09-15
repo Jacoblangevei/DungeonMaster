@@ -15,13 +15,12 @@ namespace DungeonMaster.Equipment
         Mail,
         Plate
     }
-
     public class Armor : Item
     {
         public ArmorType Type { get; private set; }
         public HeroAttribute ArmorAttribute { get; private set; }
 
-        public Armor(string name, int requiredLevel, ArmorType type, HeroAttribute armorAttribute)
+        public Armor(string name, int requiredLevel, Slot body, ArmorType type, HeroAttribute armorAttribute)
         {
             Name = name;
             RequiredLevel = requiredLevel;

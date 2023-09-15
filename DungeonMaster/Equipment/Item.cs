@@ -13,7 +13,6 @@ namespace DungeonMaster.Equipment
         public int RequiredLevel { get; protected set; }
         public Slot Slot { get; protected set; }
     }
-
     public enum Slot
     {
         Weapon, 

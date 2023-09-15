@@ -49,28 +49,26 @@ namespace DungeonMaster.Heroes
 
         public void Equip(Weapon weapon)
         {
-            // Add the weapon equipping logic, throw exception if invalid
+            // To do: Add the weapon equipping logic, throw exception if invalid
         }
 
         public void Equip(Armor armor)
         {
-            // Add the armor equipping logic, throw exception if invalid
+            // To do: Add the armor equipping logic, throw exception if invalid
         }
 
         public int Damage()
         {
-            // Implement the damage calculation logic
+            // To do: Implement the damage calculation logic
             return 0;
         }
 
         public HeroAttribute TotalAttributes()
         {
-            // Calculate total attributes and return
+            // To do: Calculate total attributes and return
             return null;
         }
 
         public abstract string Display();
     }
-
-
 }
