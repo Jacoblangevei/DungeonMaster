@@ -7,6 +7,8 @@ namespace DungeonMaster.Tests.Heroes
 {
     public class BarbarianTests
     {
+
+
         [Fact]
         public void Barbarian_Creation_ValidName_NameSetCorrectly()
         {
@@ -130,6 +132,5 @@ namespace DungeonMaster.Tests.Heroes
             // ASSERT
             Assert.Equal(expectedDamage, actualDamage);
         }
-
     }
 }

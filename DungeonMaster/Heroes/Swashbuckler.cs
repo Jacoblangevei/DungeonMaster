@@ -1,12 +1,11 @@
 ﻿using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonMaster.Attributes;
+using DungeonMaster.Equipment;
 
 namespace DungeonMaster.Heroes
 {
-    using DungeonMaster.Attributes;
-    using DungeonMaster.Equipment;
-
     public class Swashbuckler : Hero
     {
         protected override List<WeaponType> ValidWeaponTypes => new List<WeaponType>

@@ -36,8 +36,6 @@ namespace DungeonMaster.Tests.Heroes
             Assert.Equal(6, result.Intelligence);
         }
 
-
-
         [Fact]
         public void Hero_EquipInvalidWeapon_ThrowsException()
         {
@@ -62,7 +60,5 @@ namespace DungeonMaster.Tests.Heroes
             var hero = new Barbarian("Conan");
             var totalAttributes = hero.TotalAttributes();
         }
-
     }
-
 }

@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DungeonMaster.Attributes;
+using DungeonMaster.Equipment;
+using System.Collections.Generic;
 
 namespace DungeonMaster.Heroes
 {
-    using DungeonMaster.Equipment;
-    using System.Collections.Generic;
     public class Archer : Hero
     {
         protected override List<WeaponType> ValidWeaponTypes => new List<WeaponType> { WeaponType.Bow };
