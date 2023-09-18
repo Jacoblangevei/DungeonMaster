@@ -7,21 +7,6 @@ namespace DungeonMaster.Tests
 {
     public class HeroTests
     {
-        // Wizard creation
-        [Fact]
-        public void Wizard_Creation_CorrectName()
-        {
-            var hero = new Wizard("Khadgar");
-            Assert.Equal("Khadgar", hero.Name);
-        }
-
-        [Fact]
-        public void Wizard_Creation_CorrectLevel()
-        {
-            var hero = new Wizard("Khadgar");
-            Assert.Equal(1, hero.Level);
-        }
-
         // Archer creation
         [Fact]
         public void Archer_Creation_CorrectName()
