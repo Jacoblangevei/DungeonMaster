@@ -3,7 +3,7 @@ using DungeonMaster.Equipment;
 using DungeonMaster.Heroes;
 using Xunit;
 
-namespace DungeonMaster.Tests
+namespace DungeonMaster.Tests.Heroes
 {
     public class SwashbucklerTests
     {

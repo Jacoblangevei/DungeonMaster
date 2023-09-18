@@ -1,11 +1,9 @@
-﻿using DungeonMaster.Heroes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DungeonMaster.Attributes;
+using DungeonMaster.Equipment;
+using DungeonMaster.Heroes;
+using Xunit;
 
-namespace DungeonMaster.Tests
+namespace DungeonMaster.Tests.Heroes
 {
     public class ArcherTests
     {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonMaster.Equipment
 {
+    // Weapon type enum
     public enum WeaponType
     {
         Hatchet,

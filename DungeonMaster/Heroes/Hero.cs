@@ -79,8 +79,10 @@ namespace DungeonMaster.Heroes
 
             if (this is Barbarian)
                 damageAttribute = totalAttr.Strength;
+
             else if (this is Wizard)
                 damageAttribute = totalAttr.Intelligence;
+
             else if (this is Archer || this is Swashbuckler)
                 damageAttribute = totalAttr.Dexterity;
 
