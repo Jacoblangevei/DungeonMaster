@@ -63,7 +63,7 @@ namespace DungeonMaster.Tests.Heroes
 
             // ASSERT
             var attributesAfterLevelUp = hero.TotalAttributes();
-            var expectedDexterity = 6;
+            var expectedDexterity = 2;
             Assert.Equal(expectedDexterity, attributesAfterLevelUp.Dexterity);
         }
 

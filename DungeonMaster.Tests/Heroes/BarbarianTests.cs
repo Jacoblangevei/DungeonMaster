@@ -47,7 +47,7 @@ namespace DungeonMaster.Tests.Heroes
 
             // ASSERT
             var attributesAfterLevelUp = hero.TotalAttributes();
-            var expectedStrength = 2;
+            var expectedStrength = 8;
             Assert.Equal(expectedStrength, attributesAfterLevelUp.Strength);
         }
 
@@ -63,7 +63,7 @@ namespace DungeonMaster.Tests.Heroes
 
             // ASSERT
             var attributesAfterLevelUp = hero.TotalAttributes();
-            var expectedDexterity = 6;
+            var expectedDexterity = 4;
             Assert.Equal(expectedDexterity, attributesAfterLevelUp.Dexterity);
         }
 
@@ -79,7 +79,7 @@ namespace DungeonMaster.Tests.Heroes
 
             // ASSERT
             var attributesAfterLevelUp = hero.TotalAttributes();
-            var expectedIntelligence = 13;
+            var expectedIntelligence = 2;
             Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
 
