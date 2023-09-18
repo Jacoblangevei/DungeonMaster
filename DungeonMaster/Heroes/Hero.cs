@@ -71,8 +71,22 @@ namespace DungeonMaster.Heroes
 
         public int Damage()
         {
-            // 
-            return 0;
+            int baseDamage = (Equipment[Slot.Weapon] as Weapon)?.WeaponDamage ?? 1;
+
+            HeroAttribute totalAttr = TotalAttributes(); // 
+
+            int damageAttribute = 0;
+
+            if (this is Barbarian)
+                damageAttribute = totalAttr.Strength;
+            else if (this is Wizard)
+                damageAttribute = totalAttr.Intelligence;
+            else if (this is Archer || this is Swashbuckler)
+                damageAttribute = totalAttr.Dexterity;
+
+            int totalDamage = (int)(baseDamage * (1 + damageAttribute / 100.0));
+
+            return totalDamage;
         }
 
         public HeroAttribute TotalAttributes()
@@ -88,9 +102,9 @@ namespace DungeonMaster.Heroes
             return totalAttributes;
         }
 
-        public string Display()
+        public virtual string Display()
         {
-            var totalAttr = TotalAttributes(); // Assuming TotalAttributes is implemented as per previous suggestions.
+            var totalAttr = TotalAttributes(); 
 
             StringBuilder displayInfo = new StringBuilder();
             displayInfo.AppendLine($"Name: {Name}");
@@ -99,7 +113,7 @@ namespace DungeonMaster.Heroes
             displayInfo.AppendLine($"Total Strength: {totalAttr.Strength}");
             displayInfo.AppendLine($"Total Dexterity: {totalAttr.Dexterity}");
             displayInfo.AppendLine($"Total Intelligence: {totalAttr.Intelligence}");
-            displayInfo.AppendLine($"Damage: {Damage()}"); // Assuming Damage method is implemented as per previous suggestions.
+            displayInfo.AppendLine($"Damage: {Damage()}"); 
 
             return displayInfo.ToString();
         }
