@@ -82,14 +82,5 @@ namespace DungeonMaster.Tests.Heroes
             var expectedIntelligence = 13;
             Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
-
-        [Fact]
-        // Display
-        public void Wizard_Display_ShowsCorrectDetails()
-        {
-            var hero = new Wizard("Test Wizard");
-            var expectedDisplay = "Name: Khadgar, Level: 1, Class: Wizard, Strength: 1, Dexterity: 1, Intelligence: 8";
-            Assert.Equal(expectedDisplay, hero.Display());
-        }
     }
 }

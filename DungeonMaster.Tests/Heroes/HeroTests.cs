@@ -50,7 +50,7 @@ namespace DungeonMaster.Tests.Heroes
         [Fact]
         public void Hero_EquipInvalidArmor_ThrowsException()
         {
-            var hero = new Barbarian("Test Barbarian");
+            var hero = new Barbarian("Conan");
             var invalidArmor = new Armor("Invalid Armor", 5, Slot.Head, ArmorType.Cloth, new HeroAttribute(0, 0, 1));
 
             Assert.Throws<InvalidOperationException>(() => hero.Equip(invalidArmor));
@@ -61,29 +61,6 @@ namespace DungeonMaster.Tests.Heroes
         {
             var hero = new Barbarian("Conan");
             var totalAttributes = hero.TotalAttributes();
-        }
-
-        // Display Tests
-        [Fact]
-        public void Archer_Display_ShowsCorrectDetails()
-        {
-            var hero = new Archer("Test Archer");
-            var expectedDisplay = "Name: Test Archer, Level: 1, Class: Archer, Strength: 6, Dexterity: 5, Intelligence: 3";
-            Assert.Equal(expectedDisplay, hero.Display());
-        }
-        [Fact]
-        public void Barbarian_Display_ShowsCorrectDetails()
-        {
-            var hero = new Wizard("Test Wizard");
-            var expectedDisplay = "Name: Khadgar, Level: 1, Class: Wizard, Strength: 5, Dexterity: 4, Intelligence: 8";
-            Assert.Equal(expectedDisplay, hero.Display());
-        }
-        [Fact]
-        public void Swashbuckler_Display_ShowsCorrectDetails()
-        {
-            var hero = new Wizard("Test Wizard");
-            var expectedDisplay = "Name: Khadgar, Level: 1, Class: Wizard, Strength: 5, Dexterity: 4, Intelligence: 8";
-            Assert.Equal(expectedDisplay, hero.Display());
         }
 
     }

@@ -9,7 +9,7 @@ namespace DungeonMaster.Tests.EquipmentTests
     {
         [Fact]
         //Common Plate Chest Tests
-        public void Armor_Creation_ValidName_NameSetCorrectly()
+        public void Common_Plate_Chest_Armor_Creation_ValidName_NameSetCorrectly()
         {
             var armor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, new HeroAttribute(1, 0, 0));
             Assert.Equal("Common Plate Chest", armor.Name);
@@ -42,6 +42,14 @@ namespace DungeonMaster.Tests.EquipmentTests
             var expectedAttributes = new HeroAttribute(1, 0, 0);
             var armor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, expectedAttributes);
             Assert.Equal(expectedAttributes, armor.ArmorAttribute);
+        }
+
+        [Fact]
+        //Linen robe tests
+        public void Linen_Robe_Armor_Creation_ValidName_NameSetCorrectly()
+        {
+            var armor = new Armor("Linen Robe", 1, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 1));
+            Assert.Equal("Linen Robe", armor.Name);
         }
     }
 

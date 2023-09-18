@@ -86,31 +86,50 @@ namespace DungeonMaster.Tests.Heroes
         [Fact]
         public void Barbarian_DamageNoWeapon_EqualBaseDamage()
         {
+            // ARRANGE
             var hero = new Barbarian("Conan");
             double expectedDamage = 1 * (1 + 5 / 100.0);
-            Assert.Equal(expectedDamage, hero.Damage());
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
         }
 
         [Fact]
         public void Barbarian_DamageWithWeapon_EqualIncreasedDamage()
         {
+            // ARRANGE
             var hero = new Barbarian("Conan");
             var hatchet = new Weapon("Common Hatchet", 1, WeaponType.Hatchet, 2);
             hero.Equip(hatchet);
             double expectedDamage = 2 * (1 + 5 / 100.0);
-            Assert.Equal(expectedDamage, hero.Damage());
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
         }
 
         [Fact]
         public void Barbarian_DamageWithWeaponAndArmor_EqualIncreasedDamage()
         {
+            // ARRANGE
             var hero = new Barbarian("Conan");
             var hatchet = new Weapon("Common Hatchet", 1, WeaponType.Hatchet, 2);
             var plateArmor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, new HeroAttribute(1, 0, 0));
             hero.Equip(hatchet);
             hero.Equip(plateArmor);
             double expectedDamage = 2 * (1 + (5 + 1) / 100.0);
-            Assert.Equal(expectedDamage, hero.Damage());
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
         }
+
     }
 }
