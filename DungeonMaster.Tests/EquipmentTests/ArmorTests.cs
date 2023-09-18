@@ -8,6 +8,7 @@ namespace DungeonMaster.Tests.EquipmentTests
     public class ArmorTests
     {
         [Fact]
+        //Common Plate Chest Tests
         public void Armor_Creation_ValidName_NameSetCorrectly()
         {
             var armor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, new HeroAttribute(1, 0, 0));

@@ -6,8 +6,8 @@ using Xunit;
 namespace DungeonMaster.Tests.EquipmentTests
 {
     public class WeaponTests
-
     {
+        //Common Hatchet Tests
         [Fact]
         public void Weapon_Creation_CorrectName()
         {

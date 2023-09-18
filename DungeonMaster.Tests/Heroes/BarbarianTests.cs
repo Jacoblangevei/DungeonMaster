@@ -10,47 +10,77 @@ namespace DungeonMaster.Tests.Heroes
         [Fact]
         public void Barbarian_Creation_ValidName_NameSetCorrectly()
         {
-            var hero = new Wizard("Conan");
+            var hero = new Barbarian("Conan");
             Assert.Equal("Conan", hero.Name);
         }
 
         [Fact]
         public void Barbarian_Creation_DefaultState_LevelSetToOne()
         {
-            var hero = new Wizard("Conan");
+            var hero = new Barbarian("Conan");
             Assert.Equal(1, hero.Level);
         }
 
         [Fact]
         public void Barbarian_LevelUp_IncrementsLevel()
         {
-            var hero = new Wizard("Conan");
+            // ARRANGE
+            const string barbarianName = "Conan";
+            var hero = new Barbarian(barbarianName);
+
+            // ACT
             hero.LevelUp();
+
+            // ASSERT
             Assert.Equal(2, hero.Level);
         }
 
         [Fact]
         public void Barbarian_LevelUp_StrengthAttributeCorrectlyIncremented()
         {
-            var hero = new Barbarian("Conan");
+            // ARRANGE
+            const string barbarianName = "Conan";
+            var hero = new Barbarian(barbarianName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(2, hero.TotalAttributes().Strength);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedStrength = 2;
+            Assert.Equal(expectedStrength, attributesAfterLevelUp.Strength);
         }
 
         [Fact]
         public void Barbarian_LevelUp_DexterityAttributeCorrectlyIncremented()
         {
-            var hero = new Barbarian("Conan");
+            // ARRANGE
+            const string barbarianName = "Conan";
+            var hero = new Barbarian(barbarianName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(10, hero.TotalAttributes().Dexterity);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedDexterity = 6;
+            Assert.Equal(expectedDexterity, attributesAfterLevelUp.Dexterity);
         }
 
         [Fact]
         public void Barbarian_LevelUp_IntelligenceAttributeCorrectlyIncremented()
         {
-            var hero = new Barbarian("Conan");
+            // ARRANGE
+            const string barbarianName = "Conan";
+            var hero = new Barbarian(barbarianName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(2, hero.TotalAttributes().Intelligence);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedIntelligence = 13;
+            Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
 
         [Fact]

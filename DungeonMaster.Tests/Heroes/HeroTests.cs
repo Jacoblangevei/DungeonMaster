@@ -8,7 +8,7 @@ namespace DungeonMaster.Tests.Heroes
     public class HeroTests
     {
 
-        // HeroAttribute creation
+        // HeroAttribute creation tests
         [Fact]
         public void HeroAttribute_Addition_IncreasesStrengthCorrectly()
         {
@@ -64,8 +64,6 @@ namespace DungeonMaster.Tests.Heroes
         }
 
         // Display Tests
-        
-
         [Fact]
         public void Archer_Display_ShowsCorrectDetails()
         {

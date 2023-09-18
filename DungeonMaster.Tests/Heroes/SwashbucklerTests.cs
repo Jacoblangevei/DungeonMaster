@@ -10,47 +10,77 @@ namespace DungeonMaster.Tests.Heroes
         [Fact]
         public void Swashbuckler_Creation_ValidName_NameSetCorrectly()
         {
-            var hero = new Wizard("Jack Sparrow");
+            var hero = new Swashbuckler("Jack Sparrow");
             Assert.Equal("Jack Sparrow", hero.Name);
         }
 
         [Fact]
         public void Swashbuckler_Creation_DefaultState_LevelSetToOne()
         {
-            var hero = new Wizard("Jack Sparrow");
+            var hero = new Swashbuckler("Jack Sparrow");
             Assert.Equal(1, hero.Level);
         }
 
         [Fact]
         public void Swashbuckler_LevelUp_IncrementsLevel()
         {
-            var hero = new Wizard("Jack Sparrow");
+            // ARRANGE
+            const string swashbucklerName = "Jack Sparrow";
+            var hero = new Swashbuckler(swashbucklerName);
+
+            // ACT
             hero.LevelUp();
+
+            // ASSERT
             Assert.Equal(2, hero.Level);
         }
 
         [Fact]
         public void Swashbuckler_LevelUp_StrengthAttributeCorrectlyIncremented()
         {
-            var hero = new Swashbuckler("Jack Sparrow");
+            // ARRANGE
+            const string swashbucklerName = "Jack Sparrow";
+            var hero = new Swashbuckler(swashbucklerName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(2, hero.TotalAttributes().Strength);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedStrength = 2;
+            Assert.Equal(expectedStrength, attributesAfterLevelUp.Strength);
         }
 
         [Fact]
         public void Swashbuckler_LevelUp_DexterityAttributeCorrectlyIncremented()
         {
-            var hero = new Swashbuckler("Jack Sparrow");
+            // ARRANGE
+            const string swashbucklerName = "Jack Sparrow";
+            var hero = new Swashbuckler(swashbucklerName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(10, hero.TotalAttributes().Dexterity);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedDexterity = 6;
+            Assert.Equal(expectedDexterity, attributesAfterLevelUp.Dexterity);
         }
 
         [Fact]
         public void Swashbuckler_LevelUp_IntelligenceAttributeCorrectlyIncremented()
         {
-            var hero = new Swashbuckler("Jack Sparrow");
+            // ARRANGE
+            const string swashbucklerName = "Jack Sparrow";
+            var hero = new Swashbuckler(swashbucklerName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(2, hero.TotalAttributes().Intelligence);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedIntelligence = 13;
+            Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
     }
 }

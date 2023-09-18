@@ -10,47 +10,77 @@ namespace DungeonMaster.Tests.Heroes
         [Fact]
         public void Archer_Creation_ValidName_NameSetCorrectly()
         {
-            var hero = new Wizard("Legolas");
+            var hero = new Archer("Legolas");
             Assert.Equal("Legolas", hero.Name);
         }
 
         [Fact]
         public void Archer_Creation_DefaultState_LevelSetToOne()
         {
-            var hero = new Wizard("Legolas");
+            var hero = new Archer("Legolas");
             Assert.Equal(1, hero.Level);
         }
 
         [Fact]
         public void Archer_LevelUp_IncrementsLevel()
         {
-            var hero = new Wizard("Legolas");
+            // ARRANGE
+            const string archerName = "Legolas";
+            var hero = new Archer(archerName);
+
+            // ACT
             hero.LevelUp();
+
+            // ASSERT
             Assert.Equal(2, hero.Level);
         }
 
         [Fact]
         public void Archer_LevelUp_StrengthAttributeCorrectlyIncremented()
         {
-            var hero = new Archer("Legolas");
+            // ARRANGE
+            const string archerName = "Legolas";
+            var hero = new Archer(archerName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(2, hero.TotalAttributes().Strength);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedStrength = 2;
+            Assert.Equal(expectedStrength, attributesAfterLevelUp.Strength);
         }
 
         [Fact]
         public void Archer_LevelUp_DexterityAttributeCorrectlyIncremented()
         {
-            var hero = new Archer("Legolas");
+            // ARRANGE
+            const string archerName = "Legolas";
+            var hero = new Archer(archerName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(10, hero.TotalAttributes().Dexterity);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedDexterity = 6;
+            Assert.Equal(expectedDexterity, attributesAfterLevelUp.Dexterity);
         }
 
         [Fact]
         public void Archer_LevelUp_IntelligenceAttributeCorrectlyIncremented()
         {
-            var hero = new Archer("Legolas");
+            // ARRANGE
+            const string archerName = "Legolas";
+            var hero = new Archer(archerName);
+
+            // ACT
             hero.LevelUp();
-            Assert.Equal(2, hero.TotalAttributes().Intelligence);
+
+            // ASSERT
+            var attributesAfterLevelUp = hero.TotalAttributes();
+            var expectedIntelligence = 13;
+            Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
     }
 }

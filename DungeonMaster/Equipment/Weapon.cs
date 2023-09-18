@@ -21,6 +21,8 @@ namespace DungeonMaster.Equipment
     {
         public WeaponType Type { get; private set; }
         public int WeaponDamage { get; private set; }
+
+        // Constructor
         public Weapon(string name, int requiredLevel, WeaponType type, int weaponDamage)
         {
             Name = name;
@@ -30,6 +32,8 @@ namespace DungeonMaster.Equipment
             WeaponDamage = weaponDamage;
         }
     }
+
+    // Custom exception
     public class InvalidWeaponException : Exception
     {
         public InvalidWeaponException(string message) : base(message) { }

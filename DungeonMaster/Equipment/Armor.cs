@@ -15,11 +15,13 @@ namespace DungeonMaster.Equipment
         Mail,
         Plate
     }
+    
     public class Armor : Item
     {
         public ArmorType Type { get; private set; }
         public HeroAttribute ArmorAttribute { get; private set; }
 
+        // Constructor
         public Armor(string name, int requiredLevel, Slot body, ArmorType type, HeroAttribute armorAttribute)
         {
             Name = name;
@@ -29,6 +31,7 @@ namespace DungeonMaster.Equipment
             ArmorAttribute = armorAttribute;
         }
     }
+    // Custom exception
     public class InvalidArmorException : Exception
     {
         public InvalidArmorException(string message) : base(message) { }
