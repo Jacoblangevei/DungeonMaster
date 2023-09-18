@@ -44,7 +44,7 @@ namespace DungeonMaster.Tests.Heroes
             var hero = new Barbarian("Conan");
             var invalidWeapon = new Weapon("Invalid Weapon", 5, WeaponType.Wand, 10);
 
-            Assert.Throws<InvalidOperationException>(() => hero.Equip(invalidWeapon));
+            Assert.Throws<DungeonMaster.Heroes.InvalidWeaponException>(() => hero.Equip(invalidWeapon));
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace DungeonMaster.Tests.Heroes
             var hero = new Barbarian("Conan");
             var invalidArmor = new Armor("Invalid Armor", 5, Slot.Head, ArmorType.Cloth, new HeroAttribute(0, 0, 1));
 
-            Assert.Throws<InvalidOperationException>(() => hero.Equip(invalidArmor));
+            Assert.Throws<DungeonMaster.Heroes.InvalidArmorException>(() => hero.Equip(invalidArmor));
         }
 
         [Fact]

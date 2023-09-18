@@ -88,7 +88,7 @@ namespace DungeonMaster.Tests.Heroes
         {
             // ARRANGE
             var hero = new Barbarian("Conan");
-            double expectedDamage = 1 * (1 + 5 / 100.0);
+            double expectedDamage = 1 * (1 + 5 / 99);
 
             // ACT
             var actualDamage = hero.Damage();
@@ -104,7 +104,7 @@ namespace DungeonMaster.Tests.Heroes
             var hero = new Barbarian("Conan");
             var hatchet = new Weapon("Common Hatchet", 1, WeaponType.Hatchet, 2);
             hero.Equip(hatchet);
-            double expectedDamage = 2 * (1 + 5 / 100.0);
+            double expectedDamage = 2 * (1 + 5 / 99);
 
             // ACT
             var actualDamage = hero.Damage();
@@ -122,7 +122,7 @@ namespace DungeonMaster.Tests.Heroes
             var plateArmor = new Armor("Common Plate Chest", 1, Slot.Body, ArmorType.Plate, new HeroAttribute(1, 0, 0));
             hero.Equip(hatchet);
             hero.Equip(plateArmor);
-            double expectedDamage = 2 * (1 + (5 + 1) / 100.0);
+            double expectedDamage = 2 * (1 + (5 + 1) / 99);
 
             // ACT
             var actualDamage = hero.Damage();

@@ -20,10 +20,10 @@ namespace DungeonMaster.Equipment
     public class Weapon : Item
     {
         public WeaponType Type { get; private set; }
-        public int WeaponDamage { get; private set; }
+        public double WeaponDamage { get; private set; }
 
         // Constructor
-        public Weapon(string name, int requiredLevel, WeaponType type, int weaponDamage)
+        public Weapon(string name, int requiredLevel, WeaponType type, double weaponDamage)
         {
             Name = name;
             RequiredLevel = requiredLevel;

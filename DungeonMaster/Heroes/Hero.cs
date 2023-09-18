@@ -71,7 +71,7 @@ namespace DungeonMaster.Heroes
 
         public int Damage()
         {
-            int baseDamage = (Equipment[Slot.Weapon] as Weapon)?.WeaponDamage ?? 1;
+            double baseDamage = (Equipment[Slot.Weapon] as Weapon)?.WeaponDamage ?? 1;
 
             HeroAttribute totalAttr = TotalAttributes(); // 
 
