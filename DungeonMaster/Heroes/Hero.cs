@@ -1,17 +1,14 @@
 ﻿using DungeonMaster.Equipment;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DungeonMaster.Attributes;
+using System;
+using static DungeonMaster.Equipment.Item;
 
 namespace DungeonMaster.Heroes
-{
-    using DungeonMaster.Attributes;
-    using System;
-    using System.Collections.Generic;
-    using static DungeonMaster.Equipment.Item;
-
+    {
     public class InvalidWeaponException : Exception
     {
         public InvalidWeaponException(string message) : base(message) { }
@@ -45,28 +42,50 @@ namespace DungeonMaster.Heroes
         };
         }
 
-        public abstract void LevelUp();
+        public virtual void LevelUp()
+        {
+            Level++;
+        }
 
         public void Equip(Weapon weapon)
         {
-            // To do: Add the weapon equipping logic, throw exception if invalid
+            if (Level < weapon.RequiredLevel)
+                throw new InvalidWeaponException("Level too low to equip this weapon!");
+
+            if (!ValidWeaponTypes.Contains(weapon.Type))
+                throw new InvalidWeaponException("This hero cannot equip this type of weapon!");
+
+            Equipment[Slot.Weapon] = weapon;
         }
 
         public void Equip(Armor armor)
         {
-            // To do: Add the armor equipping logic, throw exception if invalid
+            if (Level < armor.RequiredLevel)
+                throw new InvalidArmorException("Level too low to equip this armor!");
+
+            if (!ValidArmorTypes.Contains(armor.Type))
+                throw new InvalidArmorException("This hero cannot equip this type of armor!");
+
+            Equipment[armor.Slot] = armor;
         }
 
         public int Damage()
         {
-            // To do: Implement the damage calculation logic
+            // 
             return 0;
         }
 
         public HeroAttribute TotalAttributes()
         {
-            // To do: Calculate total attributes and return
-            return null;
+            var totalAttributes = LevelAttributes;
+
+            foreach (var item in Equipment.Values)
+            {
+                if (item is Armor armorItem)
+                    totalAttributes += armorItem.ArmorAttribute;
+            }
+
+            return totalAttributes;
         }
 
         public abstract string Display();

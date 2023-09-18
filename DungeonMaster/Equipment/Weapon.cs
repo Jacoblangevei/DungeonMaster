@@ -16,7 +16,6 @@ namespace DungeonMaster.Equipment
         Sword,
         Wand
     }
-
     public class Weapon : Item
     {
         public WeaponType Type { get; private set; }
