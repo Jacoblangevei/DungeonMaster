@@ -18,11 +18,9 @@ namespace DungeonMaster.Attributes
             Dexterity = dexterity;
             Intelligence = intelligence;
         }
-
         public static HeroAttribute operator +(HeroAttribute a, HeroAttribute b)
         {
             return new HeroAttribute(a.Strength + b.Strength, a.Dexterity + b.Dexterity, a.Intelligence + b.Intelligence);
         }
     }
-
 }

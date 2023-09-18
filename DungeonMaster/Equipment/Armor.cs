@@ -33,5 +33,4 @@ namespace DungeonMaster.Equipment
     {
         public InvalidArmorException(string message) : base(message) { }
     }
-
 }
