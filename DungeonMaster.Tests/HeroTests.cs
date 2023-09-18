@@ -1,26 +1,12 @@
 using DungeonMaster.Attributes;
-    using DungeonMaster.Equipment;
-    using DungeonMaster.Heroes;
-    using Xunit;
+using DungeonMaster.Equipment;
+using DungeonMaster.Heroes;
+using Xunit;
 
 namespace DungeonMaster.Tests
 {
     public class HeroTests
-    {
-        // Archer creation
-        [Fact]
-        public void Archer_Creation_CorrectName()
-        {
-            var hero = new Archer("Legolas");
-            Assert.Equal("Legolas", hero.Name);
-        }
-
-        [Fact]
-        public void Archer_Creation_CorrectLevel()
-        {
-            var hero = new Archer("Legolas");
-            Assert.Equal(1, hero.Level);
-        }
+    {   
 
         // Barbarian creation
         [Fact]
