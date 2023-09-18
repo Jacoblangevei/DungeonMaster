@@ -88,6 +88,20 @@ namespace DungeonMaster.Heroes
             return totalAttributes;
         }
 
-        public abstract string Display();
+        public string Display()
+        {
+            var totalAttr = TotalAttributes(); // Assuming TotalAttributes is implemented as per previous suggestions.
+
+            StringBuilder displayInfo = new StringBuilder();
+            displayInfo.AppendLine($"Name: {Name}");
+            displayInfo.AppendLine($"Class: {GetType().Name}"); // Gets the actual class name (e.g. Archer, Wizard, etc.)
+            displayInfo.AppendLine($"Level: {Level}");
+            displayInfo.AppendLine($"Total Strength: {totalAttr.Strength}");
+            displayInfo.AppendLine($"Total Dexterity: {totalAttr.Dexterity}");
+            displayInfo.AppendLine($"Total Intelligence: {totalAttr.Intelligence}");
+            displayInfo.AppendLine($"Damage: {Damage()}"); // Assuming Damage method is implemented as per previous suggestions.
+
+            return displayInfo.ToString();
+        }
     }
 }

@@ -247,7 +247,7 @@ namespace DungeonMaster.Tests
         public void Archer_Display_ShowsCorrectDetails()
         {
             var hero = new Archer("Test Archer");
-            var expectedDisplay = "Name: Test Archer, Level: 1, Class: Archer, Strength: 6, Dexterity: 5, Intelligence: 3"; // adjust as per your actual format
+            var expectedDisplay = "Name: Test Archer, Level: 1, Class: Archer, Strength: 6, Dexterity: 5, Intelligence: 3"; 
             Assert.Equal(expectedDisplay, hero.Display());
         }
         [Fact]
