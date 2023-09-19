@@ -13,6 +13,7 @@ namespace DungeonMaster.Heroes
         protected override List<WeaponType> ValidWeaponTypes => new List<WeaponType> { WeaponType.Bow };
         protected override List<ArmorType> ValidArmorTypes => new List<ArmorType> { ArmorType.Leather, ArmorType.Mail };
 
+        // Str: 1, Dex: 7, Int: 1
         public Archer(string name) : base(name)
         {
             LevelAttributes = new HeroAttribute(1, 7, 1); // Initial attributes for Archer

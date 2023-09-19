@@ -11,16 +11,20 @@ namespace DungeonMaster.Heroes
 {
     public class Wizard : Hero
     {
+        // Wizard can use Staff and Wand
         protected override List<WeaponType> ValidWeaponTypes => new List<WeaponType> 
         { 
             WeaponType.Staff, 
             WeaponType.Wand 
         };
+
+        // Wizard can use Cloth
         protected override List<ArmorType> ValidArmorTypes => new List<ArmorType> 
         { 
             ArmorType.Cloth 
         };
 
+        // Str: 1, Dex: 1, Int: 8
         public Wizard(string name) : base(name)
         {
             LevelAttributes = new HeroAttribute(1, 1, 8); // Initial attributes for Wizard

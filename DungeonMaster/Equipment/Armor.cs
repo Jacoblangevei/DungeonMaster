@@ -22,11 +22,11 @@ namespace DungeonMaster.Equipment
         public HeroAttribute ArmorAttribute { get; private set; }
 
         // Constructor
-        public Armor(string name, int requiredLevel, Slot body, ArmorType type, HeroAttribute armorAttribute)
+        public Armor(string name, int requiredLevel, Slot slot, ArmorType type, HeroAttribute armorAttribute)
         {
             Name = name;
             RequiredLevel = requiredLevel;
-            Slot = Slot.Body;
+            Slot = slot;
             Type = type;
             ArmorAttribute = armorAttribute;
         }
