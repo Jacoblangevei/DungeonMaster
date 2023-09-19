@@ -82,5 +82,88 @@ namespace DungeonMaster.Tests.Heroes
             var expectedIntelligence = 2;
             Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
+
+        [Fact]
+        public void Swashbuckler_DamageNoWeapon_EqualBaseDamage()
+        {
+            // ARRANGE
+            var hero = new Swashbuckler("Jack Sparrow");
+            double expectedDamage = 1 * (1 + 5 / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Swashbuckler_DamageWithDagger_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Swashbuckler("Jack Sparrow");
+            var dagger = new Weapon("Iron Dagger", 1, WeaponType.Dagger, 2); 
+            hero.Equip(dagger);
+            double expectedDamage = 2 * (1 + 5 / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Swashbuckler_DamageWithSword_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Swashbuckler("Jack Sparrow");
+            var sword = new Weapon("Iron Sword", 1, WeaponType.Sword, 3);  
+            hero.Equip(sword);
+            double expectedDamage = 3 * (1 + 5 / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Swashbuckler_DamageWithWeaponAndLeatherArmor_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Swashbuckler("Jack ");
+            var dagger = new Weapon("Iron Dagger", 1, WeaponType.Dagger, 2);
+            var leatherArmor = new Armor("Leather Pants", 1, Slot.Legs, ArmorType.Leather, new HeroAttribute(0, 1, 0));
+            hero.Equip(dagger);
+            hero.Equip(leatherArmor);
+            double expectedDamage = 2 * (1 + (5 + 1) / 99);  
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Swashbuckler_DamageWithWeaponAndMailArmor_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Swashbuckler("Jack Sparrow");
+            var sword = new Weapon("Iron Sword", 1, WeaponType.Sword, 3);
+            var mailArmor = new Armor("Mail Chestplate", 1, Slot.Body, ArmorType.Mail, new HeroAttribute(2, 0, 0));
+            hero.Equip(sword);
+            hero.Equip(mailArmor);
+            double expectedDamage = 3 * (1 + (5 + 2) / 99);
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
     }
 }

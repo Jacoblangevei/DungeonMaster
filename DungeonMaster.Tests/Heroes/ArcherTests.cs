@@ -82,5 +82,54 @@ namespace DungeonMaster.Tests.Heroes
             var expectedIntelligence = 2;
             Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
+
+        [Fact]
+        public void Archer_DamageNoWeapon_EqualBaseDamage()
+        {
+            // ARRANGE
+            var hero = new Archer("Legolas");
+            double expectedDamage = 1 * (1 + 5 / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Archer_DamageWithWeapon_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Archer("Legolas");
+            var bow = new Weapon("Wooden Bow", 1, WeaponType.Bow, 2); 
+            hero.Equip(bow);
+            double expectedDamage = 2 * (1 + 5 / 99);  
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Archer_DamageWithWeaponAndArmor_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Archer("Legolas");
+            var bow = new Weapon("Wooden Bow", 1, WeaponType.Bow, 2);
+            var leatherArmor = new Armor("Leather Chest", 1, Slot.Body, ArmorType.Leather, new HeroAttribute(0, 1, 0));
+            hero.Equip(bow);
+            hero.Equip(leatherArmor);
+            double expectedDamage = 2 * (1 + (5 + 1) / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
     }
 }

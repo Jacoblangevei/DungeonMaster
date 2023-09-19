@@ -82,5 +82,69 @@ namespace DungeonMaster.Tests.Heroes
             var expectedIntelligence = 13;
             Assert.Equal(expectedIntelligence, attributesAfterLevelUp.Intelligence);
         }
+
+        [Fact]
+        public void Wizard_DamageNoWeapon_EqualBaseDamage()
+        {
+            // ARRANGE
+            var hero = new Wizard("Merlin");
+            double expectedDamage = 1 * (1 + 5 / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Wizard_DamageWithStaff_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Wizard("Merlin");
+            var staff = new Weapon("Wooden Staff", 1, WeaponType.Staff, 3);  
+            hero.Equip(staff);
+            double expectedDamage = 3 * (1 + 5 / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Wizard_DamageWithWand_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Wizard("Merlin");
+            var wand = new Weapon("Wooden Wand", 1, WeaponType.Wand, 2); 
+            hero.Equip(wand);
+            double expectedDamage = 2 * (1 + 5 / 99);
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
+
+        [Fact]
+        public void Wizard_DamageWithWeaponAndClothArmor_EqualIncreasedDamage()
+        {
+            // ARRANGE
+            var hero = new Wizard("Merlin");
+            var wand = new Weapon("Wooden Wand", 1, WeaponType.Wand, 2);
+            var clothArmor = new Armor("Cloth Robe", 1, Slot.Body, ArmorType.Cloth, new HeroAttribute(0, 0, 1)); 
+            hero.Equip(wand);
+            hero.Equip(clothArmor);
+            double expectedDamage = 2 * (1 + (5 + 1) / 99); 
+
+            // ACT
+            var actualDamage = hero.Damage();
+
+            // ASSERT
+            Assert.Equal(expectedDamage, actualDamage);
+        }
     }
 }

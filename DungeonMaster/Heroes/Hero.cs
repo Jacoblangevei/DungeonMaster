@@ -9,6 +9,8 @@ using static DungeonMaster.Equipment.Item;
 
 namespace DungeonMaster.Heroes
     {
+
+    // Exceptions
     public class InvalidWeaponException : Exception
     {
         public InvalidWeaponException(string message) : base(message) { }
@@ -34,12 +36,12 @@ namespace DungeonMaster.Heroes
             Level = 1;
             LevelAttributes = new HeroAttribute(0, 0, 0);
             Equipment = new Dictionary<Slot, Item>
-        {
-            {Slot.Weapon, null},
-            {Slot.Head, null},
-            {Slot.Body, null},
-            {Slot.Legs, null}
-        };
+            {
+                {Slot.Weapon, null},
+                {Slot.Head, null},
+                {Slot.Body, null},
+                {Slot.Legs, null}
+            };
         }
 
         public virtual void LevelUp()
@@ -69,6 +71,7 @@ namespace DungeonMaster.Heroes
             Equipment[armor.Slot] = armor;
         }
 
+        //
         public int Damage()
         {
             double baseDamage = (Equipment[Slot.Weapon] as Weapon)?.WeaponDamage ?? 1;
@@ -91,6 +94,7 @@ namespace DungeonMaster.Heroes
             return totalDamage;
         }
 
+        //
         public HeroAttribute TotalAttributes()
         {
             var totalAttributes = LevelAttributes;
@@ -104,6 +108,7 @@ namespace DungeonMaster.Heroes
             return totalAttributes;
         }
 
+        // Display method
         public virtual string Display()
         {
             var totalAttr = TotalAttributes(); 
